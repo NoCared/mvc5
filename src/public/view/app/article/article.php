@@ -5,3 +5,8 @@
 <h2><?= $article['titre'] ?></h2>
 <p><?= $article['contenu'] ?></p>
 <p>Créé le : <?= $article['created_at'] ?></p>
+<p>
+    <a href="<?= $view->path('article-delete', [$article['id']]); ?>" onclick="return confirmation('Etes vous certain de vouloir supprimer cet article ?')">
+        Supprimer cet article
+    </a>
+</p>

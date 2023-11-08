@@ -33,6 +33,16 @@ class ArticleController extends Controller
             'article' => $article,
         ));
     }
+
+    public function delete($id)
+    {
+        $article = $this->isArticleExist($id);
+        ArticleModel::delete($id);
+        $this->redirect('articles');
+    }
+
+
+
     public function isArticleExist($id)
     {
         $article = ArticleModel::findById($id);

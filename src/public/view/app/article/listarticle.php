@@ -2,3 +2,17 @@
     <?= $message; ?>
 </h1>
 
+<ul>
+    <?php foreach ($articles as $article) { ?>
+
+        <h2><?= $article->titre?></h2>
+        <p><?= $article->contenu?></p>
+        <p>Créé le : <?= $article->created_at?></p>
+
+
+    <?php } ?>
+
+</ul>
+
+<?php
+//print_r($articles);

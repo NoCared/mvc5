@@ -15,7 +15,7 @@ class ArticleController extends Controller
     {
         $message = 'Liste des articles';
         $articles = ArticleModel::all();
-        $nbArticle = count($articles);
+        $nbArticle = ArticleModel::count();
 
         $this->render('app.article.listarticle',array(
             'message' => $message,
@@ -24,4 +24,14 @@ class ArticleController extends Controller
         ));
     }
 
+
+    public function show($id)
+    {
+        $message = 'Votre article :';
+        $article = ArticleModel::findById($id);
+        $this->render('app.article.article',array(
+            'message' => $message,
+            'article' => $article,
+        ));
+    }
 }

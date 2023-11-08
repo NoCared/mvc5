@@ -15,10 +15,12 @@ class ArticleController extends Controller
     {
         $message = 'Liste des articles';
         $articles = ArticleModel::all();
+        $nbArticle = count($articles);
 
         $this->render('app.article.listarticle',array(
             'message' => $message,
-            'articles' => $articles
+            'articles' => $articles,
+            'nbArticle' => $nbArticle
         ));
     }
 

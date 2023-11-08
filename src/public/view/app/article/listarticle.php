@@ -3,16 +3,13 @@
 </h1>
 
 <ul>
+    <p>Actuellement il y a <strong><?=$nbArticle?> articles</strong> sur notre blog</p>
     <?php foreach ($articles as $article) { ?>
 
         <h2><?= $article->titre?></h2>
         <p><?= $article->contenu?></p>
         <p>Créé le : <?= $article->created_at?></p>
 
-
     <?php } ?>
 
 </ul>
-
-<?php
-//print_r($articles);

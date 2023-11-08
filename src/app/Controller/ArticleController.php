@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Model\ArticleModel;
+use App\Service\Form;
+use App\Service\Validation;
 use App\Weblitzer\Controller;
 
 /**
@@ -39,6 +41,32 @@ class ArticleController extends Controller
         $article = $this->isArticleExist($id);
         ArticleModel::delete($id);
         $this->redirect('articles');
+    }
+
+    public function add()
+    {
+        $errors = [];
+        
+        if (!empty($_POST['submitted']))
+        {
+            $postArticle = $this->cleanXss($_POST);
+            $validerArticle = new Validation();
+
+            $errors['titre'] = $validerArticle->textValid($postArticle['titre'],'titre',5,100);
+            $errors['contenu'] = $validerArticle->textValid($postArticle['contenu'],'contenu',50,1000);
+            
+            if ($validerArticle->IsValid($errors))
+            {
+                //Methode d'insertion
+
+                echo "Insertion";
+            }
+        }
+
+        $formAdd = new Form($errors);
+        $this->render('app.article.addarticle',array(
+            'formAdd' => $formAdd,
+        ));
     }
 
 

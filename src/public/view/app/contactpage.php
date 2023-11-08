@@ -5,3 +5,6 @@
 <h2>
     Bonjour à tous je suis Paul
 </h2>
+
+<?php
+print_r($fruits);

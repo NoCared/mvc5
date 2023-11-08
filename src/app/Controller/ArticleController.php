@@ -24,14 +24,18 @@ class ArticleController extends Controller
         ));
     }
 
-
     public function show($id)
     {
         $message = 'Votre article :';
-        $article = ArticleModel::findById($id);
+        $article = $this->isArticleExist($id);
         $this->render('app.article.article',array(
             'message' => $message,
             'article' => $article,
         ));
+    }
+    public function isArticleExist($id)
+    {
+        $article = ArticleModel::findById($id);
+        return (empty($article)) ? $this->Abort404() : $article;
     }
 }

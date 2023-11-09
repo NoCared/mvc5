@@ -8,6 +8,7 @@ $routes = array(
     array('article-delete','article','delete',['id']),
     array('article-add','article','add'),
     array('article-edit','article','edit',['id']),
+    array('article-dashboard','admin','dashboard'),
 );
 
 

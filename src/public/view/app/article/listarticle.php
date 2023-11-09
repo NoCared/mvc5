@@ -7,10 +7,11 @@
     <?php foreach ($articles as $article) { ?>
 
         <h2>
-              <a href="<?= $view->path('article',[$article->id]); ?>"><?= $article->titre?></a>
-        </h2> 
+            <a href="<?= $view->path('article', [$article->id]); ?>"><?= $article->titre ?></a>
+        </h2>
         <p>Créé le : <?= $article->created_at ?></p>
         <br>
     <?php } ?>
+
 
 </ul>

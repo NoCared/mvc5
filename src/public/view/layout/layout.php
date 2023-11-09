@@ -16,6 +16,7 @@
               <li><a href="<?= $view->path('contact'); ?>">Contact</a></li>
               <li><a href="<?= $view->path('articles'); ?>">Articles</a></li>
               <li><a href="<?= $view->path('article-add'); ?>">Ajout article</a></li>
+              <li><a href="<?= $view->path('article-dashboard'); ?>">DashBoard</a></li>
           </ul>
       </nav>
     </header>

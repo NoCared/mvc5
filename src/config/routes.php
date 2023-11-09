@@ -7,6 +7,7 @@ $routes = array(
     array('article','article','show',['id']),
     array('article-delete','article','delete',['id']),
     array('article-add','article','add'),
+    array('article-edit','article','edit',['id']),
 );
 
 

@@ -19,4 +19,16 @@ class ArticleModel extends Model
             ]
         );
     }
+
+    public static function update($post, $id)
+    {
+        App::getDatabase()->prepareInsert(
+            'UPDATE ' . self::$table . ' SET titre = ? , contenu = ? WHERE id = ?',
+            [
+                $post['titre'],
+                $post['contenu'],
+                $id
+            ]
+        );
+    }
 }

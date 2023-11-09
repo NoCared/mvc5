@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\ArticleModel;
+use App\Model\UserModel;
 use App\Weblitzer\Controller;
 
 /**
@@ -10,7 +11,7 @@ use App\Weblitzer\Controller;
  */
 class AdminController extends Controller
 {
-    public function dashBoard()
+    public function dashBoardArticles()
     {
         $message = 'DashBoard articles';
         $articles = ArticleModel::all();
@@ -20,6 +21,18 @@ class AdminController extends Controller
             'message' => $message,
             'articles' => $articles,
             'nbArticle' => $nbArticle
+        ));
+    }
+    public function dashBoardUsers()
+    {
+        $message = 'DashBoard users';
+        $users = UserModel::all();
+        $nbUser = UserModel::count();
+
+        $this->render('app.users.dashboard',array(
+            'message' => $message,
+            'users' => $users,
+            'nbUser' => $nbUser
         ));
     }
 }

@@ -16,7 +16,7 @@
             <td><?= $key ?></td>
             <td><?= $article->id ?></td>
             <td><h3><?= $article->titre ?></h3></td>
-            <td><?= substr_replace($article->contenu, '(...)', 40, -1)  ?></td>
+            <td><?= substr_replace($article->contenu, '', 40) . '(...)'  ?></td>
 
             <td>Créé le : <?= $article->created_at ?></td>
 

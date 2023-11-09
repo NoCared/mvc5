@@ -17,6 +17,8 @@
               <li><a href="<?= $view->path('articles'); ?>">Articles</a></li>
               <li><a href="<?= $view->path('article-add'); ?>">Ajout article</a></li>
               <li><a href="<?= $view->path('article-dashboard'); ?>">DashBoard</a></li>
+              <li><a href="<?= $view->path('users'); ?>">Users</a></li>
+              <li><a href="<?= $view->path('user-add'); ?>">Ajout user</a></li>
           </ul>
       </nav>
     </header>
